@@ -126,7 +126,7 @@ describe Yt::Annotations do
       expect(annotations[14].text).to eq 'Cards link to Merch site'
       expect(annotations[14].link).to be_a Hash
       expect(annotations[14].link[:url]).to include 'bandcamp.com'
-      expect(annotations[14].link[:type]).to be :merch
+      expect(annotations[14].link[:type]).to be :website
       expect(annotations[14].link[:new_window]).to be true
 
       expect(annotations[15]).to be_a Yt::Annotations::Branding
@@ -144,7 +144,7 @@ describe Yt::Annotations do
       expect(annotations[16].text).to eq 'Card links to Crowdfunding'
       expect(annotations[16].link).to be_a Hash
       expect(annotations[16].link[:url]).to include 'causes.com'
-      expect(annotations[16].link[:type]).to be :crowdfunding
+      expect(annotations[16].link[:type]).to be :website
       expect(annotations[16].link[:new_window]).to be true
     end
   end

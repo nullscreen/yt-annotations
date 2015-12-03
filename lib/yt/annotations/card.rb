@@ -30,9 +30,7 @@ module Yt
           when 'collaborator' then :channel
           when 'playlist' then :playlist
           when 'video' then :video
-          when 'merch' then :merch
-          when 'fundraising' then :crowdfunding
-          when 'associated' then :website
+          when 'simple' then :website
         end
 
         {url: json['url'], new_window: true, type: link_type}
