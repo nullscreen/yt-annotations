@@ -3,13 +3,13 @@ A Ruby gem to fetch YouTube annotations
 
 Yt::Annotations is a Ruby library to fetch annotations and cards of YouTube videos.
 
-The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-annotations) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/Fullscreen/yt-annotations/master/Elegant/Interface).
+The **source code** is available on [GitHub](https://github.com/claudiob/yt-annotations) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/claudiob/yt-annotations/master/yt-annotations).
 
-[![Build Status](http://img.shields.io/travis/Fullscreen/yt-annotations/master.svg)](https://travis-ci.org/Fullscreen/yt-annotations)
-[![Coverage Status](http://img.shields.io/coveralls/Fullscreen/yt-annotations/master.svg)](https://coveralls.io/r/Fullscreen/yt-annotations)
-[![Dependency Status](http://img.shields.io/gemnasium/Fullscreen/yt-annotations.svg)](https://gemnasium.com/Fullscreen/yt-annotations)
-[![Code Climate](http://img.shields.io/codeclimate/github/Fullscreen/yt-annotations.svg)](https://codeclimate.com/github/Fullscreen/yt-annotations)
-[![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/github/Fullscreen/yt-annotations/master/Elegant)
+[![Build Status](http://img.shields.io/travis/claudiob/yt-annotations/master.svg)](https://travis-ci.org/claudiob/yt-annotations)
+[![Coverage Status](http://img.shields.io/coveralls/claudiob/yt-annotations/master.svg)](https://coveralls.io/r/claudiob/yt-annotations)
+[![Dependency Status](http://img.shields.io/gemnasium/claudiob/yt-annotations.svg)](https://gemnasium.com/claudiob/yt-annotations)
+[![Code Climate](http://img.shields.io/codeclimate/github/claudiob/yt-annotations.svg)](https://codeclimate.com/github/claudiob/yt-annotations)
+[![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/github/claudiob/yt-annotations/master/yt-annotations)
 [![Gem Version](http://img.shields.io/gem/v/yt-annotations.svg)](http://rubygems.org/gems/yt-annotations)
 
 How to use
@@ -33,7 +33,7 @@ annotations.first.link
 How to install
 ==============
 
-Elegant requires **Ruby 2.0 or higher**.
+Yt::Annotations requires **Ruby 2.0 or higher**.
 
 To include in your project, add `gem 'yt-annotations', ~> '1.0'` to the `Gemfile` file of your Ruby project.
 

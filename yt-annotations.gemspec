@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Fetch annotations and cards from YouTube videos.}
   spec.description   = %q{A Ruby library to retrieve every type of annotation from
     any YouTube video, including branding, featured content and info cards.}
-  spec.homepage      = 'https://github.com/fullscreen/yt-annotations'
+  spec.homepage      = 'https://github.com/claudiob/yt-annotations'
   spec.license       = 'MIT'
 
   spec.required_ruby_version = '>= 2.0'
