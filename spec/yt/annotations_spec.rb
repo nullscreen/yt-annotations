@@ -26,8 +26,8 @@ describe Yt::Annotations do
 
       expect(annotations[2]).to be_a Yt::Annotations::Card
       expect(annotations[2].starts_at).to be 1.115
-      expect(annotations[2].ends_at).to be 6.115
-      expect(annotations[2].text).to eq "Suggested: EXCLUSIVE: 'Finding Dory' Trailer"
+      expect(annotations[2].ends_at).to be 8.115
+      expect(annotations[2].text).to include "EXCLUSIVE: 'Finding Dory' Trailer"
       expect(annotations[2].link).to be_a Hash
       expect(annotations[2].link[:url]).to include 'youtube.com/watch?v=3JNLwlcPBPI'
       expect(annotations[2].link[:type]).to be :video
@@ -86,8 +86,8 @@ describe Yt::Annotations do
 
       expect(annotations[10]).to be_a Yt::Annotations::Card
       expect(annotations[10].starts_at).to be 8.038
-      expect(annotations[10].ends_at).to be 13.038
-      expect(annotations[10].text).to eq 'Suggested: Adorable Kids'
+      expect(annotations[10].ends_at).to be 15.038
+      expect(annotations[10].text).to include 'Adorable Kids'
       expect(annotations[10].link).to be_a Hash
       expect(annotations[10].link[:url]).to include 'list=PLuW4g7xujBWfU26JUTW1DGs3hk4LD5KaL'
       expect(annotations[10].link[:type]).to be :playlist
@@ -113,7 +113,7 @@ describe Yt::Annotations do
 
       expect(annotations[13]).to be_a Yt::Annotations::Card
       expect(annotations[13].starts_at).to be 15.038
-      expect(annotations[13].ends_at).to be 20.038
+      expect(annotations[13].ends_at).to be 22.038
       expect(annotations[13].text).to eq 'Card with link to channel'
       expect(annotations[13].link).to be_a Hash
       expect(annotations[13].link[:url]).to include 'youtube.com/user/TheEllenShow'
@@ -122,7 +122,7 @@ describe Yt::Annotations do
 
       expect(annotations[14]).to be_a Yt::Annotations::Card
       expect(annotations[14].starts_at).to be 22.192
-      expect(annotations[14].ends_at).to be 27.192
+      expect(annotations[14].ends_at).to be 29.192
       expect(annotations[14].text).to eq 'Cards link to Merch site'
       expect(annotations[14].link).to be_a Hash
       expect(annotations[14].link[:url]).to include 'bandcamp.com'
@@ -140,7 +140,7 @@ describe Yt::Annotations do
 
       expect(annotations[16]).to be_a Yt::Annotations::Card
       expect(annotations[16].starts_at).to be 30.038
-      expect(annotations[16].ends_at).to be 35.038
+      expect(annotations[16].ends_at).to be 37.0
       expect(annotations[16].text).to eq 'Card links to Crowdfunding'
       expect(annotations[16].link).to be_a Hash
       expect(annotations[16].link[:url]).to include 'causes.com'
@@ -188,11 +188,11 @@ describe Yt::Annotations do
   # If this test fails, make sure that the card is still there, or change the
   # video ids.
   context 'given a video an "associated website" link in a card' do
-    let(:video_id) { 'D3Z53V6x0KU' }
+    let(:video_id) { 'IK1f5IU3WaE' }
 
     it 'also returns the featured video' do
-      expect(annotations[2]).to be_a Yt::Annotations::Card
-      expect(annotations[2].link[:type]).to be :website
+      expect(annotations[0]).to be_a Yt::Annotations::Card
+      expect(annotations[0].link[:type]).to be :website
     end
   end
 
@@ -211,7 +211,7 @@ describe Yt::Annotations do
 
   # NOTE: Third-party video, read above.
   context 'given a video without annotations' do
-    let(:video_id) { 'IK1f5IU3WaE' }
+    let(:video_id) { 'hx-gU_q1JCU' }
 
     it 'returns an empty array' do
       expect(annotations).to be_empty
