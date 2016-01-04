@@ -3,13 +3,13 @@ A Ruby gem to fetch YouTube annotations
 
 Yt::Annotations is a Ruby library to fetch annotations and cards of YouTube videos.
 
-The **source code** is available on [GitHub](https://github.com/claudiob/yt-annotations) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/claudiob/yt-annotations/master/yt-annotations).
+The **source code** is available on [GitHub](https://github.com/claudiob/yt-annotations) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/claudiob/yt-annotations/Yt/Annotations).
 
 [![Build Status](http://img.shields.io/travis/claudiob/yt-annotations/master.svg)](https://travis-ci.org/claudiob/yt-annotations)
 [![Coverage Status](http://img.shields.io/coveralls/claudiob/yt-annotations/master.svg)](https://coveralls.io/r/claudiob/yt-annotations)
 [![Dependency Status](http://img.shields.io/gemnasium/claudiob/yt-annotations.svg)](https://gemnasium.com/claudiob/yt-annotations)
 [![Code Climate](http://img.shields.io/codeclimate/github/claudiob/yt-annotations.svg)](https://codeclimate.com/github/claudiob/yt-annotations)
-[![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/github/claudiob/yt-annotations/master/yt-annotations)
+[![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/gems/yt-annotations/Yt/Annotations)
 [![Gem Version](http://img.shields.io/gem/v/yt-annotations.svg)](http://rubygems.org/gems/yt-annotations)
 
 How to use
