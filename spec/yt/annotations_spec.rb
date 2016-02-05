@@ -201,11 +201,11 @@ describe Yt::Annotations do
     let(:video_id) { 'xuVt2sm3gu4' }
 
     it 'also returns the featured video' do
-      expect(annotations[5]).to be_a Yt::Annotations::Note
-      expect(annotations[5].link[:type]).to be :website
+      expect(annotations[4]).to be_a Yt::Annotations::Note
+      expect(annotations[4].link[:type]).to be :website
 
-      expect(annotations[7]).to be_a Yt::Annotations::Spotlight
-      expect(annotations[7].link[:type]).to be :website
+      expect(annotations[6]).to be_a Yt::Annotations::Spotlight
+      expect(annotations[6].link[:type]).to be :website
     end
   end
 
