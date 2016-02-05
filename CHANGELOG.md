@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 1.2.1 - 2016.02.05
+
+* [ENHANCEMENT] Update homepage on rubygems.org
+
 ## 1.2.0 - 2015.12.02
 
 * [ENHANCEMENT] Parse new 'simple' card type (which YouTube now uses instead of 'merch', 'fundraising', 'associated').
