@@ -217,4 +217,12 @@ describe Yt::Annotations do
       expect(annotations).to be_empty
     end
   end
+
+  context 'given a video with an info card' do
+    let(:video_id) { '_rfvhA5rrkM' }
+
+    it 'does not raise an error' do
+      expect(annotations).to be
+    end
+  end
 end

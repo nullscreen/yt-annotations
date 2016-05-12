@@ -23,6 +23,7 @@ module Yt
         annotations = xml['document']['annotations']
         annotations = Array.wrap (annotations || {})['annotation']
         annotations = merge_highlights annotations
+        annotations = exclude_drawers annotations
         annotations.map{|data| annotation_class(data).new data}
       end
 
@@ -40,6 +41,10 @@ module Yt
             when 'promotion' then Annotations::Featured
           end
         end
+      end
+
+      def exclude_drawers(annotations)
+        annotations.reject{|a| a['type'] == 'drawer'}
       end
 
       def merge_highlights(annotations)
