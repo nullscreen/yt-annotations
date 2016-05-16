@@ -20,7 +20,7 @@ describe Yt::Annotations do
       expect(annotations[1].ends_at).to be 2.0
       expect(annotations[1].text).to eq 'n1'
       expect(annotations[1].link).to be_a Hash
-      expect(annotations[1].link[:url]).to include 'youtube.com/watch?v=3JNLwlcPBPI'
+      expect(annotations[1].link[:url]).to include 'v=3JNLwlcPBPI'
       expect(annotations[1].link[:type]).to be :video
       expect(annotations[1].link[:new_window]).to be false
 
@@ -29,7 +29,7 @@ describe Yt::Annotations do
       expect(annotations[2].ends_at).to be 8.115
       expect(annotations[2].text).to include "EXCLUSIVE: 'Finding Dory' Trailer"
       expect(annotations[2].link).to be_a Hash
-      expect(annotations[2].link[:url]).to include 'youtube.com/watch?v=3JNLwlcPBPI'
+      expect(annotations[2].link[:url]).to include 'v=3JNLwlcPBPI'
       expect(annotations[2].link[:type]).to be :video
       expect(annotations[2].link[:new_window]).to be true
 
@@ -44,7 +44,7 @@ describe Yt::Annotations do
       expect(annotations[4].ends_at).to be 4.0
       expect(annotations[4].text).to eq 'n3'
       expect(annotations[4].link).to be_a Hash
-      expect(annotations[4].link[:url]).to include 'youtube.com/playlist?list=PLuW4g7xujBWfU26JUTW1DGs3hk4LD5KaL'
+      expect(annotations[4].link[:url]).to include 'list=PLuW4g7xujBWfU26JUTW1DGs3hk4LD5KaL'
       expect(annotations[4].link[:type]).to be :playlist
       expect(annotations[4].link[:new_window]).to be true
 
@@ -98,7 +98,7 @@ describe Yt::Annotations do
       expect(annotations[11].ends_at).to be 10.0
       expect(annotations[11].text).to eq 'n9'
       expect(annotations[11].link).to be_a Hash
-      expect(annotations[11].link[:url]).to include 'youtube.com/user/TheEllenShow?sub_confirmation=1'
+      expect(annotations[11].link[:url]).to include 'youtube.com/user/TheEllenShow'
       expect(annotations[11].link[:type]).to be :subscribe
       expect(annotations[11].link[:new_window]).to be true
 
@@ -175,9 +175,9 @@ describe Yt::Annotations do
       expect(annotations[0]).to be_a Yt::Annotations::Featured
       expect(annotations[0].starts_at).to be 0.0
       expect(annotations[0].ends_at).to be 3.0
-      expect(annotations[0].text).to eq 'Check out this video: Fullscreen Creator Platform'
+      expect(annotations[0].text).to eq 'Check out this video: Me at the zoo'
       expect(annotations[0].link).to be_a Hash
-      expect(annotations[0].link[:url]).to include 'youtube.com/watch?v=MESycYJytkU'
+      expect(annotations[0].link[:url]).to include 'v=jNQXAC9IVRw'
       expect(annotations[0].link[:type]).to be :video
       expect(annotations[0].link[:new_window]).to be true
     end
@@ -198,11 +198,11 @@ describe Yt::Annotations do
 
   # NOTE: Third-party video, read above.
   context 'given a video an "associated website" link in a note' do
-    let(:video_id) { 'xuVt2sm3gu4' }
+    let(:video_id) { '61gPNrYiTdg' }
 
     it 'also returns the featured video' do
-      expect(annotations[4]).to be_a Yt::Annotations::Note
-      expect(annotations[4].link[:type]).to be :website
+      expect(annotations[5]).to be_a Yt::Annotations::Note
+      expect(annotations[5].link[:type]).to be :website
 
       expect(annotations[6]).to be_a Yt::Annotations::Spotlight
       expect(annotations[6].link[:type]).to be :website
@@ -215,6 +215,14 @@ describe Yt::Annotations do
 
     it 'returns an empty array' do
       expect(annotations).to be_empty
+    end
+  end
+
+  context 'given a video with an info card' do
+    let(:video_id) { '_rfvhA5rrkM' }
+
+    it 'does not raise an error' do
+      expect(annotations).to be
     end
   end
 end
