@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 1.2.2 - 2016.05.16
+
+* [BUGFIX] Do not raise errors from videos with info cards.
+
 ## 1.2.1 - 2016.02.05
 
 * [ENHANCEMENT] Update homepage on rubygems.org
