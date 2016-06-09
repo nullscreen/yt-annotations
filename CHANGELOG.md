@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 1.2.3 - 2016.06.09
+
+* [BUGFIX] Don't raise errors on `Yt::Annotations.for` for some videos in Barbie channel
+
 ## 1.2.2 - 2016.05.16
 
 * [BUGFIX] Do not raise errors from videos with info cards.

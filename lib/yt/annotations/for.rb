@@ -51,7 +51,7 @@ module Yt
         highlights, others = annotations.partition{|a| a['type'] == 'highlight'}
         highlights.each do |highlight|
           match = others.find do |a|
-            a.fetch('segment', {})['spaceRelative'] == highlight['id']
+            (a['segment'] || {})['spaceRelative'] == highlight['id']
           end
           match.merge! highlight if match
         end
