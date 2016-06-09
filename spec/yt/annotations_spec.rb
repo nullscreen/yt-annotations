@@ -140,7 +140,7 @@ describe Yt::Annotations do
 
       expect(annotations[16]).to be_a Yt::Annotations::Card
       expect(annotations[16].starts_at).to be 30.038
-      expect(annotations[16].ends_at).to be 37.0
+      expect(annotations[16].ends_at).to be 37.038
       expect(annotations[16].text).to eq 'Card links to Crowdfunding'
       expect(annotations[16].link).to be_a Hash
       expect(annotations[16].link[:url]).to include 'causes.com'
