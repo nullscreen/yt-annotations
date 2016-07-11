@@ -33,7 +33,7 @@ annotations.first.link
 How to install
 ==============
 
-Yt::Annotations requires **Ruby 2.0 or higher**.
+Yt::Annotations requires **Ruby 2.2.2 or higher**.
 
 To include in your project, add `gem 'yt-annotations', ~> '1.0'` to the `Gemfile` file of your Ruby project.
 
