@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 1.3.0 - 2016.07.11
+
+* [BUGFIX] Bump Ruby version to 2.2.2 to make it work with ActiveSupport 5
+
 ## 1.2.3 - 2016.06.09
 
 * [BUGFIX] Don't raise errors on `Yt::Annotations.for` for some videos in Barbie channel
