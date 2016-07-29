@@ -198,7 +198,7 @@ describe Yt::Annotations do
 
   # NOTE: Third-party video, read above.
   context 'given a video an "associated website" link in a note' do
-    let(:video_id) { '61gPNrYiTdg' }
+    let(:video_id) { '-W37TDK6dBM' }
 
     it 'also returns the featured video' do
       expect(annotations[5]).to be_a Yt::Annotations::Note
