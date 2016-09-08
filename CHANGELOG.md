@@ -7,6 +7,10 @@ For more information about changelogs, check
 [Vandamme](http://tech-angels.github.io/vandamme).
 
 
+## 1.3.2 - 2016.09.08
+
+* [BUGFIX] Do not raise errors from videos with 'speech' style
+
 ## 1.3.1 - 2016.09.07
 
 * [ENHANCEMENT] Fetch 'pause' annotation without errors.
