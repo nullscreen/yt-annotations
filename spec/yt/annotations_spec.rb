@@ -225,4 +225,13 @@ describe Yt::Annotations do
       expect(annotations).to be
     end
   end
+
+  # NOTE: Third-party video, pause type annotation is no longer available.
+  context 'given a video with a pause type annotation' do
+    let(:video_id) { 'qLGxubfC1Ik' }
+
+    it 'also returns pause annotation' do
+      expect(annotations[1]).to be_a Yt::Annotations::Pause
+    end
+  end
 end

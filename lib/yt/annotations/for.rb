@@ -6,6 +6,7 @@ require 'yt/annotations/note'
 require 'yt/annotations/speech'
 require 'yt/annotations/spotlight'
 require 'yt/annotations/title'
+require 'yt/annotations/pause'
 
 module Yt
   module Annotations
@@ -39,6 +40,7 @@ module Yt
           else case data['type']
             when 'card' then Annotations::Card
             when 'promotion' then Annotations::Featured
+            when 'pause' then Annotations::Pause
           end
         end
       end

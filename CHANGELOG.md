@@ -6,6 +6,11 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+
+## 1.3.1 - 2016.09.07
+
+* [ENHANCEMENT] Fetch 'pause' annotation without errors.
+
 ## 1.3.0 - 2016.07.11
 
 * [BUGFIX] Bump Ruby version to 2.2.2 to make it work with ActiveSupport 5
