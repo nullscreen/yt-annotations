@@ -31,7 +31,7 @@ module Yt
 
       def annotation_class(data)
         case data['style']
-          when 'anchored' then Annotations::Speech
+          when 'anchored', 'speech' then Annotations::Speech
           when 'branding' then Annotations::Branding
           when 'highlightText' then Annotations::Spotlight
           when 'label' then Annotations::Label

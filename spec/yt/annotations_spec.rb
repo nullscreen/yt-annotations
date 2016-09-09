@@ -226,6 +226,14 @@ describe Yt::Annotations do
     end
   end
 
+  context 'given a video with a speech' do
+    let(:video_id) { 'BgUkm4xdf74' }
+
+    it 'does not raise an error' do
+      expect(annotations).to be
+    end
+  end
+
   # NOTE: Third-party video, pause type annotation is no longer available.
   context 'given a video with a pause type annotation' do
     let(:video_id) { 'qLGxubfC1Ik' }
