@@ -12,7 +12,7 @@ module Yt
   module Annotations
     module For
       def for(video_id)
-        request = Net::HTTP::Get.new "/annotations_invideo?video_id=#{video_id}"
+        request = Net::HTTP::Get.new "/annotations_invideo?video_id=#{video_id}&regionCode=US"
         options = ['www.youtube.com', 443, {use_ssl: true}]
         response = Net::HTTP.start(*options) {|http| http.request request}
         xml_to_annotations(Hash.from_xml response.body).sort_by &:starts_at
