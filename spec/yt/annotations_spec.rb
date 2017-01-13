@@ -149,6 +149,50 @@ describe Yt::Annotations do
     end
   end
 
+  context 'given a video with an end screen' do
+    let(:video_id) { 'NNUlOLaupuw' }
+
+    it 'returns all the end screen annotations' do
+      expect(annotations.size).to be 5 # [0] is Featured
+
+      expect(annotations[1]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[1].starts_at).to be 25.312
+      expect(annotations[1].ends_at).to be 35.005
+      expect(annotations[1].text).to eq 'PewDiePie'
+      expect(annotations[1].link).to be_a Hash
+      expect(annotations[1].link[:url]).to eq 'https://www.youtube.com/user/PewDiePie'
+      expect(annotations[1].link[:type]).to be :channel
+      expect(annotations[1].link[:new_window]).to be true
+
+      expect(annotations[2]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[2].starts_at).to be 25.962
+      expect(annotations[2].ends_at).to be 35.005
+      expect(annotations[2].text).to eq 'T-Shirt Shop for Geeks, Gamer, Nerds'
+      expect(annotations[2].link).to be_a Hash
+      expect(annotations[2].link[:url]).to eq 'https://3dsupply.de/en/'
+      expect(annotations[2].link[:type]).to be :website
+      expect(annotations[2].link[:new_window]).to be true
+
+      expect(annotations[3]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[3].starts_at).to be 26.741
+      expect(annotations[3].ends_at).to be 35.015
+      expect(annotations[3].text).to eq 'PSY - GANGNAM STYLE(강남스타일) M/V'
+      expect(annotations[3].link).to be_a Hash
+      expect(annotations[3].link[:url]).to eq 'https://www.youtube.com/watch?v=9bZkp7q19f0'
+      expect(annotations[3].link[:type]).to be :video
+      expect(annotations[3].link[:new_window]).to be false
+
+      expect(annotations[4]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[4].starts_at).to be 27.287
+      expect(annotations[4].ends_at).to be 35.031
+      expect(annotations[4].text).to eq 'First public playlist'
+      expect(annotations[4].link).to be_a Hash
+      expect(annotations[4].link[:url]).to include 'list=PL-LeTutc9GRKD3yBDhnRF_yE8UTaQI5Jf'
+      expect(annotations[4].link[:type]).to be :playlist
+      expect(annotations[4].link[:new_window]).to be false
+    end
+  end
+
   context 'given a video without cards and with a featured playlist' do
     let(:video_id) { 'GFxm7khsS3g' }
 

@@ -7,6 +7,10 @@ For more information about changelogs, check
 [Vandamme](http://tech-angels.github.io/vandamme).
 
 
+## 1.4.0 - 2017.01.13
+
+* [FEATURE] Add End Screens
+
 ## 1.3.2 - 2016.09.08
 
 * [BUGFIX] Do not raise errors from videos with 'speech' style

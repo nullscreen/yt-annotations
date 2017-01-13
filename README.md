@@ -1,7 +1,7 @@
 A Ruby gem to fetch YouTube annotations
 =======================================
 
-Yt::Annotations is a Ruby library to fetch annotations and cards of YouTube videos.
+Yt::Annotations is a Ruby library to fetch annotations, cards and end screens of YouTube videos.
 
 The **source code** is available on [GitHub](https://github.com/fullscreen/yt-annotations) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-annotations/Yt/Annotations).
 
