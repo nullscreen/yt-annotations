@@ -232,11 +232,11 @@ describe Yt::Annotations do
   # If this test fails, make sure that the card is still there, or change the
   # video ids.
   context 'given a video an "associated website" link in a card' do
-    let(:video_id) { 'IK1f5IU3WaE' }
+    let(:video_id) { '8tARnAXUGYA' }
 
     it 'also returns the featured video' do
-      expect(annotations[0]).to be_a Yt::Annotations::Card
-      expect(annotations[0].link[:type]).to be :website
+      expect(annotations[1]).to be_a Yt::Annotations::Card
+      expect(annotations[1].link[:type]).to be :website
     end
   end
 
