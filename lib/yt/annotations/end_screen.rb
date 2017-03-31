@@ -24,25 +24,20 @@ module Yt
           when 'WEBSITE'
             json['endpoint']['urlEndpoint']['url']
           when 'PLAYLIST'
-            if json['endpoint']['watchEndpoint']['videoId']
-              "https://www.youtube.com/watch?v=" +
-              json['endpoint']['watchEndpoint']['videoId'] +
-              "&list=" +
-              json['endpoint']['watchEndpoint']['playlistId']
-            else
-              "https://www.youtube.com/playlist?list=" +
-              json['endpoint']['watchEndpoint']['playlistId']
-            end
+            "https://www.youtube.com/watch?v=" +
+            json['endpoint']['watchEndpoint']['videoId'] +
+            "&list=" +
+            json['endpoint']['watchEndpoint']['playlistId']
           when 'VIDEO'
             "https://www.youtube.com/watch?v=" +
             json['endpoint']['watchEndpoint']['videoId']
           when 'CHANNEL'
             if json['isSubscribe']
               "https://www.youtube.com/channel/" +
-              json['hovercardButton']["subscribeButtonRenderer"]['channelId']
+              json['hovercardButton']['subscribeButtonRenderer']['channelId']
             else
               "https://www.youtube.com/channel/" +
-              json['endpoint']["browseEndpoint"]["browseId"]
+              json['endpoint']['browseEndpoint']["browseId"]
             end
           end
         {

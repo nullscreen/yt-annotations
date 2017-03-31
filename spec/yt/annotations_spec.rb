@@ -193,6 +193,15 @@ describe Yt::Annotations do
     end
   end
 
+  context 'given another video with endscreen' do
+    let(:video_id) { 'EuqmXkjhisE' }
+
+    it 'returns an end screen annotation with subscribe type' do
+      expect(annotations[1]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[1].link[:type]).to be :subscribe
+    end
+  end
+
   context 'given a video without cards and with a featured playlist' do
     let(:video_id) { 'GFxm7khsS3g' }
 
