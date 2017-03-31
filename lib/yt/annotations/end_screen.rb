@@ -7,8 +7,8 @@ module Yt
       # @param [Hash] data the Hash representation of the XML data returned by
       #   YouTube for each end screen of a video.
       def initialize(json = {})
-        @text = json['title']
-        @starts_at = json['startMs'] / 1000.0
+        @text = json['title']['runs'][0]['text']
+        @starts_at = json['startMs'].to_i / 1000.0
         @ends_at = ends_at_in json
         @link = to_link json
       end
@@ -16,25 +16,45 @@ module Yt
     private
 
       def ends_at_in(json)
-        (json['startMs'] + json['durationMs']) / 1000.0
+        json['endMs'].to_i / 1000.0
       end
 
       def to_link(json)
+        target_url = case json['style']
+          when 'WEBSITE'
+            json['endpoint']['urlEndpoint']['url']
+          when 'PLAYLIST'
+            "https://www.youtube.com/watch?v=" +
+            json['endpoint']['watchEndpoint']['videoId'] +
+            "&list=" +
+            json['endpoint']['watchEndpoint']['playlistId']
+          when 'VIDEO'
+            "https://www.youtube.com/watch?v=" +
+            json['endpoint']['watchEndpoint']['videoId']
+          when 'CHANNEL'
+            if json['isSubscribe']
+              "https://www.youtube.com/channel/" +
+              json['hovercardButton']['subscribeButtonRenderer']['channelId']
+            else
+              "https://www.youtube.com/channel/" +
+              json['endpoint']['browseEndpoint']["browseId"]
+            end
+          end
         {
-          url: json['targetUrl'], new_window: new_window(json['type']), 
+          url: target_url, new_window: new_window(json['style']),
           type: link_type(json)
         }
       end
-      
+
       def link_type(json)
-        case json['type']
+        case json['style']
           when 'WEBSITE' then :website
           when 'PLAYLIST' then :playlist
           when 'VIDEO' then :video
           when 'CHANNEL' then (json['isSubscribe'] ? :subscribe : :channel)
         end
       end
-      
+
       def new_window(type)
         %w(WEBSITE CHANNEL).include? type
       end

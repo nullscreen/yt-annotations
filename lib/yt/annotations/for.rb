@@ -46,7 +46,7 @@ module Yt
 
       def json_to_annotations(json)
         annotations = json['elements']
-        annotations.map{|data| Annotations::EndScreen.new data}
+        annotations.map{|data| Annotations::EndScreen.new data['endscreenElementRenderer']}
       end
 
       def annotation_class(data)

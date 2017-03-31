@@ -160,7 +160,7 @@ describe Yt::Annotations do
       expect(annotations[1].ends_at).to be 35.005
       expect(annotations[1].text).to eq 'PewDiePie'
       expect(annotations[1].link).to be_a Hash
-      expect(annotations[1].link[:url]).to eq 'https://www.youtube.com/user/PewDiePie'
+      expect(annotations[1].link[:url]).to eq 'https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw'
       expect(annotations[1].link[:type]).to be :channel
       expect(annotations[1].link[:new_window]).to be true
 
@@ -190,6 +190,15 @@ describe Yt::Annotations do
       expect(annotations[4].link[:url]).to include 'list=PL-LeTutc9GRKD3yBDhnRF_yE8UTaQI5Jf'
       expect(annotations[4].link[:type]).to be :playlist
       expect(annotations[4].link[:new_window]).to be false
+    end
+  end
+
+  context 'given another video with endscreen' do
+    let(:video_id) { 'EuqmXkjhisE' }
+
+    it 'returns an end screen annotation with subscribe type' do
+      expect(annotations[1]).to be_a Yt::Annotations::EndScreen
+      expect(annotations[1].link[:type]).to be :subscribe
     end
   end
 
@@ -242,7 +251,7 @@ describe Yt::Annotations do
 
   # NOTE: Third-party video, read above.
   context 'given a video an "associated website" link in a note' do
-    let(:video_id) { '-W37TDK6dBM' }
+    let(:video_id) { 'jeCSnH9mQFo' }
 
     it 'also returns the featured video' do
       expect(annotations[5]).to be_a Yt::Annotations::Note
