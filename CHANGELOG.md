@@ -7,6 +7,10 @@ For more information about changelogs, check
 [Vandamme](http://tech-angels.github.io/vandamme).
 
 
+## 1.4.1 - 2017.03.31
+
+* [BUGFIX] Change `EndScreen` according to its endpoint change on YouTube
+
 ## 1.4.0 - 2017.01.13
 
 * [FEATURE] Add End Screens
