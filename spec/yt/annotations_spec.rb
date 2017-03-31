@@ -160,7 +160,7 @@ describe Yt::Annotations do
       expect(annotations[1].ends_at).to be 35.005
       expect(annotations[1].text).to eq 'PewDiePie'
       expect(annotations[1].link).to be_a Hash
-      expect(annotations[1].link[:url]).to eq 'https://www.youtube.com/user/PewDiePie'
+      expect(annotations[1].link[:url]).to eq 'https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw'
       expect(annotations[1].link[:type]).to be :channel
       expect(annotations[1].link[:new_window]).to be true
 
