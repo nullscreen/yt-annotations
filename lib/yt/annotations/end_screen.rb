@@ -4,7 +4,7 @@ module Yt
   module Annotations
     # An end screen annotation shows in the last 5 to seconds of the video.
     class EndScreen < Base
-      # @param [Hash] data the Hash representation of the XML data returned by
+      # @param [Hash] json the Hash representation of the XML data returned by
       #   YouTube for each end screen of a video.
       def initialize(json = {})
         @text = json['title']['runs'][0]['text']
