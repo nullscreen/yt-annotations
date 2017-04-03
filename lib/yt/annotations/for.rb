@@ -9,11 +9,16 @@ require 'yt/annotations/spotlight'
 require 'yt/annotations/title'
 require 'yt/annotations/pause'
 
+# An object-oriented Ruby client for YouTube.
+# @see http://www.rubydoc.info/gems/yt/
 module Yt
   module Annotations
+    # Provides a method to fetch annotations and cards for a YouTube video.
     module For
+      # @param [String] video_id the unique ID of a YouTube video.
+      # @return [Array<Yt::Annotation>] the annotations/end cards of the video.
       def for(video_id)
-        (annotations(video_id) + end_screens(video_id)).sort_by &:starts_at
+        (annotations(video_id) + end_screens(video_id)).sort_by(&:starts_at)
       end
 
     private

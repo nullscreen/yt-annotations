@@ -37,14 +37,17 @@ Yt::Annotations requires **Ruby 2.2.2 or higher**.
 
 To include in your project, add `gem 'yt-annotations', ~> '1.0'` to the `Gemfile` file of your Ruby project.
 
+
 How to contribute
 =================
 
-If you’ve made it this far in the README… thanks! :v:
-Feel free to try it the gem, explore the code, and send issues or pull requests.
+Contribute to the code by forking the project, adding the missing code,
+writing the appropriate tests and submitting a pull request.
 
-All pull requests will have to make Travis and Code Climate happy in order to be accepted. :kissing_smiling_eyes:
+In order for a PR to be approved, all the tests need to pass and all the public
+methods need to be documented and listed in the guides. Remember:
 
-You can also run the tests locally with `bundle exec rspec`.
+- to run all tests locally: `bundle exec rspec`
+- to generate the docs locally: `bundle exec yard`
+- to list undocumented methods: `bundle exec yard stats --list-undoc`
 
-Happy hacking!
