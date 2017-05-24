@@ -7,13 +7,21 @@ module Yt
       # @param [Hash] json the Hash representation of the XML data returned by
       #   YouTube for each end screen of a video.
       def initialize(json = {})
-        @text = json['title']['runs'][0]['text']
+        @text = text_in json
         @starts_at = json['startMs'].to_i / 1000.0
         @ends_at = ends_at_in json
         @link = to_link json
       end
 
     private
+
+      def text_in(json)
+        if json['title']['runs'].nil?
+          json['title']['simpleText']
+        else
+          json['title']['runs'][0]['text']
+        end
+      end
 
       def ends_at_in(json)
         json['endMs'].to_i / 1000.0
