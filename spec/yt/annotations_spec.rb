@@ -254,11 +254,13 @@ describe Yt::Annotations do
     let(:video_id) { 'jeCSnH9mQFo' }
 
     it 'also returns the featured video' do
-      expect(annotations[5]).to be_a Yt::Annotations::Note
-      expect(annotations[5].link[:type]).to be :website
+      note = annotations.find{|a| a.starts_at == 72.9}
+      expect(note).to be_a Yt::Annotations::Note
+      expect(note.link[:type]).to be :website
 
-      expect(annotations[6]).to be_a Yt::Annotations::Spotlight
-      expect(annotations[6].link[:type]).to be :website
+      spotlight = annotations.find{|a| a.link[:url] == 'http://www.fox.com/masterchef-junior/'}
+      expect(spotlight).to be_a Yt::Annotations::Spotlight
+      expect(spotlight.link[:type]).to be :website
     end
   end
 

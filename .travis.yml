@@ -1,7 +1,5 @@
 language: ruby
 cache: bundler
-notifications:
-  email: false
 rvm:
   - 2.2.2
 script:
