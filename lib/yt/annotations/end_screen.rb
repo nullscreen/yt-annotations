@@ -16,11 +16,7 @@ module Yt
     private
 
       def text_in(json)
-        if json['title']['runs'].nil?
-          json['title']['simpleText']
-        else
-          json['title']['runs'][0]['text']
-        end
+        json['title']['simpleText']
       end
 
       def ends_at_in(json)
