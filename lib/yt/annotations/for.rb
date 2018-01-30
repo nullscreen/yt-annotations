@@ -1,7 +1,6 @@
 require 'yt/annotations/branding'
 require 'yt/annotations/card'
 require 'yt/annotations/end_screen'
-require 'yt/annotations/featured'
 require 'yt/annotations/label'
 require 'yt/annotations/note'
 require 'yt/annotations/speech'
@@ -64,7 +63,6 @@ module Yt
           when 'title' then Annotations::Title
           else case data['type']
             when 'card' then Annotations::Card
-            when 'promotion' then Annotations::Featured
             when 'pause' then Annotations::Pause
           end
         end

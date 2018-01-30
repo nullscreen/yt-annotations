@@ -35,7 +35,6 @@ module Yt
           when '5' then :subscribe
           when '6' then :website
           when '8' then :crowdfunding
-          when '12' then :website
         end
         {url: url['value'], new_window: new_window, type: type}
       end
