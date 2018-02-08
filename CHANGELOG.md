@@ -6,7 +6,7 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
-## Unreleased
+## 2.0.0 - 2018.02.08
 
 **How to upgrade**
 
@@ -14,6 +14,8 @@ If your code calls `Yt::Annotation::Featured` object, you should not use it beca
 
 * [REMOVAL] Remove Yt::Annotation::Featured annotation because YouTube removed it (as of 12-14-2017).
 https://developers.google.com/youtube/v3/revision_history?id=november-27-2017
+* [BUGFIX] Do not raise errors from end screens with different URL format
+* [ENHANCEMENT] Fetch 'promotion' type annotation without errors.
 
 ## 1.4.2 - 2017.05.24
 

@@ -7,6 +7,7 @@ require 'yt/annotations/speech'
 require 'yt/annotations/spotlight'
 require 'yt/annotations/title'
 require 'yt/annotations/pause'
+require 'yt/annotations/promotion'
 
 # An object-oriented Ruby client for YouTube.
 # @see http://www.rubydoc.info/gems/yt/
@@ -64,6 +65,7 @@ module Yt
           else case data['type']
             when 'card' then Annotations::Card
             when 'pause' then Annotations::Pause
+            when 'promotion' then Annotations::Promotion
           end
         end
       end

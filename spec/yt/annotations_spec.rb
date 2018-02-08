@@ -231,6 +231,17 @@ describe Yt::Annotations do
   end
 
   # NOTE: Third-party video, read above.
+  context 'given a video with call to action overlay' do
+    let(:video_id) { 'f90eVCNIkys' }
+
+    it 'returns promotion annotation' do
+      expect(annotations[0]).to be_a Yt::Annotations::Promotion
+      expect(annotations[0].link[:type]).to be :website
+      expect(annotations[0].link[:url]).to eq 'http://www.seventhgeneration.com/laundry-detergent'
+    end
+  end
+
+  # NOTE: Third-party video, read above.
   context 'given a video without annotations' do
     let(:video_id) { 'hx-gU_q1JCU' }
 
