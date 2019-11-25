@@ -18,16 +18,16 @@ How to use
 Simply call `Yt::Annotations.for` with the ID of a YouTube video:
 
 ```ruby
-annotations = Yt::Annotations.for 'MESycYJytkU'
-# => [#<Yt::Annotations::Featured …>]
+annotations = Yt::Annotations.for 'rdwz7QiG0lk'
+# => [#<Yt::Annotations::Branding …>]
 annotations.first.text
-# => "Suggested by Fullscreen: What is Fullscreen?"
+# => ""
 annotations.first.starts_at
-# => 76.0
+# => 30.0
 annotations.first.ends_at
-# => 86.0
+# => 424.0
 annotations.first.link
-# {url: "https://www.youtube.com/watch?v=NeMlqbX2Ifg", new_window: true, type: :video}
+# {:url=>"https://www.youtube.com/user/YouTube", :new_window=>true, :type=>:channel}
 ```
 
 How to install
@@ -35,7 +35,7 @@ How to install
 
 Yt::Annotations requires **Ruby 2.2.2 or higher**.
 
-To include in your project, add `gem 'yt-annotations', ~> '1.0'` to the `Gemfile` file of your Ruby project.
+To include in your project, add `gem 'yt-annotations', ~> '2.0'` to the `Gemfile` file of your Ruby project.
 
 
 How to contribute
