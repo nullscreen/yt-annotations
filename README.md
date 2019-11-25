@@ -8,7 +8,7 @@ The **source code** is available on [GitHub](https://github.com/fullscreen/yt-an
 [![Build Status](http://img.shields.io/travis/Fullscreen/yt-annotations/master.svg)](https://travis-ci.org/Fullscreen/yt-annotations)
 [![Coverage Status](https://coveralls.io/repos/github/Fullscreen/yt-annotations/badge.svg?branch=master)](https://coveralls.io/github/Fullscreen/yt-annotations?branch=master)
 [![Dependency Status](http://img.shields.io/gemnasium/Fullscreen/yt-annotations.svg)](https://gemnasium.com/Fullscreen/yt-annotations)
-[![Code Climate](http://img.shields.io/codeclimate/github/Fullscreen/yt-annotations.svg)](https://codeclimate.com/github/Fullscreen/yt-annotations)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b186efaae14e521ca51d/maintainability)](https://codeclimate.com/github/Fullscreen/yt-annotations/maintainability)
 [![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/gems/yt-annotations/Yt/Annotations)
 [![Gem Version](http://img.shields.io/gem/v/yt-annotations.svg)](http://rubygems.org/gems/yt-annotations)
 
