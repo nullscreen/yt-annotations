@@ -85,7 +85,7 @@ describe Yt::Annotations do
       expect(annotations[1].ends_at).to be 35.005
       expect(annotations[1].text).to eq 'T-Shirt Shop for Geeks, Gamer, Nerds'
       expect(annotations[1].link).to be_a Hash
-      redirect_to_link = URI.decode_www_form(annotations[1].link[:url]).to_h.values[0]
+      redirect_to_link = URI.decode_www_form(annotations[1].link[:url]).to_h["q"]
       expect(redirect_to_link).to eq 'https://3dsupply.de/en/'
       expect(annotations[1].link[:type]).to be :website
       expect(annotations[1].link[:new_window]).to be true
