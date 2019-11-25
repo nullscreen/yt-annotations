@@ -1,13 +1,6 @@
 require 'yt/annotations/branding'
 require 'yt/annotations/card'
 require 'yt/annotations/end_screen'
-require 'yt/annotations/label'
-require 'yt/annotations/note'
-require 'yt/annotations/speech'
-require 'yt/annotations/spotlight'
-require 'yt/annotations/title'
-require 'yt/annotations/pause'
-require 'yt/annotations/promotion'
 
 # An object-oriented Ruby client for YouTube.
 # @see http://www.rubydoc.info/gems/yt/
@@ -44,7 +37,6 @@ module Yt
       def xml_to_annotations(xml)
         annotations = xml['document']['annotations']
         annotations = Array.wrap (annotations || {})['annotation']
-        annotations = merge_highlights annotations
         annotations = exclude_drawers annotations
         annotations.map{|data| annotation_class(data).new data}
       end
@@ -56,33 +48,16 @@ module Yt
 
       def annotation_class(data)
         case data['style']
-          when 'anchored', 'speech' then Annotations::Speech
           when 'branding' then Annotations::Branding
-          when 'highlightText' then Annotations::Spotlight
-          when 'label' then Annotations::Label
-          when 'popup' then Annotations::Note
-          when 'title' then Annotations::Title
-          else case data['type']
+          else
+            case data['type']
             when 'card' then Annotations::Card
-            when 'pause' then Annotations::Pause
-            when 'promotion' then Annotations::Promotion
           end
         end
       end
 
       def exclude_drawers(annotations)
         annotations.reject{|a| a['type'] == 'drawer'}
-      end
-
-      def merge_highlights(annotations)
-        highlights, others = annotations.partition{|a| a['type'] == 'highlight'}
-        highlights.each do |highlight|
-          match = others.find do |a|
-            (a['segment'] || {})['spaceRelative'] == highlight['id']
-          end
-          match.merge! highlight if match
-        end
-        others
       end
     end
   end
